@@ -1,5 +1,5 @@
 ---
-{{- range $i := until .Values.configmapCount }}
+{{- range $i := until (int .Values.serviceCount) }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
