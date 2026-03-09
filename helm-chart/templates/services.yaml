@@ -1,0 +1,14 @@
+{{- range $i := until (int .Values.serviceCount) }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: fake-service-{{ $i }}
+spec:
+  selector:
+    app: fake-deploy-0
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+{{- end }}

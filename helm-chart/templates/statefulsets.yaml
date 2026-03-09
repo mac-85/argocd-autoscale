@@ -1,5 +1,5 @@
 ---
-{{- range $i := until .Values.statefulsetCount }}
+{{- range $i := until (int .Values.statefulsetCount) }}
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
