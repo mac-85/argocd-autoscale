@@ -34,7 +34,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/YOUR_REPO/argocd-scale-test
+        repoURL: https://github.com/mac-85/argocd-autoscale
         targetRevision: HEAD
         path: helm-chart
       destination:
