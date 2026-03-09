@@ -1,0 +1,21 @@
+---
+{{- range $i := until .Values.deploymentCount }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fake-deployment-{{ $i }}
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: fake-deployment-{{ $i }}
+  template:
+    metadata:
+      labels:
+        app: fake-deployment-{{ $i }}
+    spec:
+      containers:
+      - name: fake
+        image: nginx
+---
+{{- end }}

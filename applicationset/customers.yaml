@@ -1,0 +1,46 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: customers
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - name: ct-01
+      - name: ct-02
+      - name: ct-03
+      - name: ct-04
+      - name: ct-05
+      - name: ct-06
+      - name: ct-07
+      - name: ct-08
+      - name: ct-09
+      - name: ct-10
+      - name: ct-11
+      - name: ct-12
+      - name: ct-13
+      - name: ct-14
+      - name: ct-15
+      - name: ct-16
+      - name: ct-17
+      - name: ct-18
+      - name: ct-19
+      - name: ct-20
+  template:
+    metadata:
+      name: '{{name}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/YOUR_REPO/argocd-scale-test
+        targetRevision: HEAD
+        path: helm-chart
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{name}}'
+      syncPolicy:
+        automated: {}
+        syncOptions:
+        - CreateNamespace=true

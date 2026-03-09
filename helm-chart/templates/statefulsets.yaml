@@ -1,0 +1,22 @@
+---
+{{- range $i := until .Values.statefulsetCount }}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: fake-statefulset-{{ $i }}
+spec:
+  replicas: 0
+  serviceName: fake
+  selector:
+    matchLabels:
+      app: fake-statefulset-{{ $i }}
+  template:
+    metadata:
+      labels:
+        app: fake-statefulset-{{ $i }}
+    spec:
+      containers:
+      - name: fake
+        image: nginx
+---
+{{- end }}

@@ -1,0 +1,10 @@
+---
+{{- range $i := until .Values.configmapCount }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fake-config-{{ $i }}
+data:
+  key: value
+---
+{{- end }}
