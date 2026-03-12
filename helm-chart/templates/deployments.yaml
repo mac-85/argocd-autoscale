@@ -5,7 +5,7 @@ kind: Deployment
 metadata:
   name: fake-deployment-{{ $i }}
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: fake-deployment-{{ $i }}

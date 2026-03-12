@@ -5,7 +5,7 @@ kind: StatefulSet
 metadata:
   name: fake-statefulset-{{ $i }}
 spec:
-  replicas: 1
+  replicas: 0
   serviceName: fake
   selector:
     matchLabels:
