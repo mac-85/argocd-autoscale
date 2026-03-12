@@ -1,5 +1,5 @@
 ---
-deploymentCount: 10
-statefulsetCount: 5
+deploymentCount: 20
+statefulsetCount: 10
 serviceCount: 10
 configmapCount: 30
